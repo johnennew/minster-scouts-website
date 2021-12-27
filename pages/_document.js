@@ -1,4 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import getMeta from '../site'
+const meta = getMeta();
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -7,13 +9,6 @@ class MyDocument extends Document {
   }
 
   render() {
-    const meta = {
-      title: '1st Minster Scout Group',
-      description: 'Information about Scouting in the village of Minster in Thanet',
-      image:
-        'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png'
-    }
-
     return (
       <Html lang="en">
         <Head>
@@ -28,6 +23,25 @@ class MyDocument extends Document {
           <meta name="twitter:title" content={meta.title} />
           <meta name="twitter:description" content={meta.description} />
           <meta name="twitter:image" content={meta.image} />
+          <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Minster Scouts RSS2 feed"
+            href={`${meta.link}/feed.xml`}
+          />
+          <link
+            rel="alternate"
+            type="application/atom+xml"
+            title="Minster Scouts Atom Feed"
+            href={`${meta.link}/atom.xml`}
+          />
+          <link
+            rel="alternate"
+            type="application/json"
+            title="Minster Scouts JSON Feed"
+            href={`${meta.link}/feed.json`}
+          />
         </Head>
         <body>
           <Main />
