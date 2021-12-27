@@ -9,9 +9,9 @@ const cloudflareImageLoader = ({ src, width, quality }) => {
 }
 
 export default function Img(props) {
-  if (process.env.NODE_ENV === 'development') {
-    return <Image unoptimized={true} {...props} />
-  } else {
+  //if (process.env.NODE_ENV === 'development') {
+  //  return <Image unoptimized={true} {...props} />
+  //} else {
     return <Image {...props} loader={cloudflareImageLoader} />
-  }
+  //}
 }
