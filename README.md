@@ -1,3 +1,3 @@
-# React-Static - Basic Template
+# 1st Minster Scouts website
 
-To use this template, run `react-static create` and use the `basic` template.
+This is the code for the website for the 1st Minster Scouts in Thanet
