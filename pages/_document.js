@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import getMeta from '../site'
-const meta = getMeta();
+import meta from '../site'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {

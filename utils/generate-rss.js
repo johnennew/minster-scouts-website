@@ -3,11 +3,7 @@ const path = require('path')
 const matter = require('gray-matter')
 const { Feed } = require('feed')
 
-const meta = {
-  title: 'Minster Scouts',
-  description: 'Updates from Minster Scouts',
-  link: 'https://www.minsterscouts.org/',
-}
+const meta = require('../site')
 
 async function generate() {
   const feed = new Feed({
