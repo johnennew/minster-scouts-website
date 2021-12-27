@@ -5,13 +5,13 @@ const cloudflareImageLoader = ({ src, width, quality }) => {
   if (!quality) {
     quality = 75
   }
-  return `https://images.minster-scouts.workers.dev?width=${width}&quality=${quality}&image=https://[yourdomain.com]${src}`
+  return `https://images.minster-scouts.workers.dev?width=${width}&quality=${quality}&image=https://www.minsterscouts.org${src}`
 }
 
 export default function Img(props) {
-  //if (process.env.NODE_ENV === 'development') {
-  //  return <Image unoptimized={true} {...props} />
-  //} else {
+  if (process.env.NODE_ENV === 'development') {
+    return <Image unoptimized={true} {...props} />
+  } else {
     return <Image {...props} loader={cloudflareImageLoader} />
-  //}
+  }
 }

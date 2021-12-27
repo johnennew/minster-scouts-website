@@ -4,7 +4,6 @@ const withNextra = require('nextra')({
   unstable_staticImage: true,
 })
 
-
 module.exports = {
   images: {
     loader: 'imgix',
