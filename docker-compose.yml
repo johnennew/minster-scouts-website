@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  node:
+    image: node:${NODE_VERSION}-alpine
+    container_name: "ms_node"
+    volumes:
+      - ./:/app:delegated
+    working_dir: /app
+    environment:
+      DOCKER_LOCAL: 1
+    command: 'yarn dev'
+    ports:
+      - "9229:9229"
+      - "3000:3000"
+      - "6006:6006"
