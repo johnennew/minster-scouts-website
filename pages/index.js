@@ -5,7 +5,6 @@ import styles from '../styles/Home.module.css'
 import { Client } from '../utils/prismicHelpers'
 import { RichText } from 'prismic-reactjs'
 
-/**
 export async function getServerSideProps(context) {
   const document = await Client().getSingle('homepage')
 
@@ -15,8 +14,8 @@ export async function getServerSideProps(context) {
     },
   }
 }
-*/
 
+/**
 export async function getStaticProps() {
   const document = await Client().getSingle('homepage')
 
@@ -26,6 +25,7 @@ export async function getStaticProps() {
     },
   }
 }
+*/
 
 export default function Home( props ) {
   return (
