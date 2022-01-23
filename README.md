@@ -30,7 +30,7 @@ yarn storybook
 
 Open [http://localhost:6006](http://localhost:6006) with your browser to see the result.
 
-To manage content types and slices in Prismic CMS run:
+To manage content types and slices in Prismic CMS run
 
 ```bash
 yarn slicemachine

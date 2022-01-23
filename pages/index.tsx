@@ -1,3 +1,5 @@
+import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
+
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -5,7 +7,8 @@ import styles from '../styles/Home.module.css'
 import { Client } from '../utils/prismicHelpers'
 import { RichText } from 'prismic-reactjs'
 
-export async function getServerSideProps(context) {
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const document = await Client().getSingle('homepage')
 
   return {
@@ -14,18 +17,6 @@ export async function getServerSideProps(context) {
     },
   }
 }
-
-/**
-export async function getStaticProps() {
-  const document = await Client().getSingle('homepage')
-
-  return {
-    props: {
-      document
-    },
-  }
-}
-*/
 
 export default function Home( props ) {
   return (
