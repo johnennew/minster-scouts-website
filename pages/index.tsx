@@ -1,15 +1,26 @@
-import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
+import { GetServerSideProps } from 'next'
 
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 import { Client } from '../utils/prismicHelpers'
-import { RichText } from 'prismic-reactjs'
+import {PrismicDocumentWithUID, RichTextField} from "@prismicio/types";
+import {PrismicRichText} from "@prismicio/react";
 
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const document = await Client().getSingle('homepage')
+interface Homepage extends PrismicDocumentWithUID {
+    type: "homepage";
+    data: {
+        title: RichTextField;
+    }
+}
+
+interface HomepageDocument {
+    document: Homepage;
+}
+
+export const getServerSideProps: GetServerSideProps<HomepageDocument> = async (context) => {
+  const document = await Client().getSingle<Homepage>('homepage');
 
   return {
     props: {
@@ -18,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-export default function Home( props ) {
+export default function Home( homepage: HomepageDocument ) {
   return (
     <div className={styles.container}>
       <Head>
@@ -28,7 +39,7 @@ export default function Home( props ) {
       </Head>
 
       <main className={styles.main}>
-        <RichText render={props.document.data.title} />
+        <PrismicRichText field={homepage.document.data.title} />
       </main>
 
     </div>
