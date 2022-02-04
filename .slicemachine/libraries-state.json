@@ -1,0 +1,85 @@
+{
+  "slices": {
+    "components": {
+      "text_and_image": {
+        "library": "slices",
+        "id": "text_and_image",
+        "name": "TextAndImage",
+        "description": "TextAndImage",
+        "model": {
+          "id": "text_and_image",
+          "type": "SharedSlice",
+          "name": "TextAndImage",
+          "description": "TextAndImage",
+          "variations": [
+            {
+              "id": "default-slice",
+              "name": "Default slice",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "TextAndImage",
+              "primary": {
+                "text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Text",
+                    "placeholder": "The text to show on the page",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,heading2,heading3,heading4,strong,em,list-item,o-list-item"
+                  }
+                },
+                "image": {
+                  "config": {
+                    "label": "image",
+                    "constraint": {},
+                    "thumbnails": []
+                  },
+                  "type": "Image"
+                }
+              },
+              "items": {}
+            }
+          ]
+        },
+        "mocks": {
+          "default-slice": {
+            "variation": "default-slice",
+            "name": "Default slice",
+            "slice_type": "text_and_image",
+            "items": [],
+            "primary": {
+              "text": [
+                {
+                  "type": "paragraph",
+                  "text": "Est fugiat et enim esse consequat.",
+                  "spans": []
+                }
+              ],
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?w=900&h=500&fit=crop"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "isDirectory": true,
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default-slice": {
+            "path": "/Users/johnennew/Sites/minster-scouts-prismic/.slicemachine/assets/slices/TextAndImage/default-slice/preview.png",
+            "width": 800,
+            "height": 75
+          }
+        }
+      }
+    }
+  }
+}

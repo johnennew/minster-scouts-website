@@ -1,19 +1,10 @@
 import { GetServerSideProps } from 'next'
-
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-
 import { Client } from '../utils/prismicHelpers'
-import {PrismicDocumentWithUID, RichTextField} from "@prismicio/types";
-import {PrismicRichText} from "@prismicio/react";
-
-
-interface Homepage extends PrismicDocumentWithUID {
-    type: "homepage";
-    data: {
-        title: RichTextField;
-    }
-}
+import {PrismicRichText, SliceZone} from "@prismicio/react";
+import TextAndImage from '../slices/TextAndImage'
+import {Homepage} from "../utils/types";
 
 interface HomepageDocument {
     document: Homepage;
@@ -30,6 +21,7 @@ export const getServerSideProps: GetServerSideProps<HomepageDocument> = async (c
 }
 
 export default function Home( homepage: HomepageDocument ) {
+console.log(homepage);
   return (
     <div className={styles.container}>
       <Head>
@@ -39,7 +31,26 @@ export default function Home( homepage: HomepageDocument ) {
       </Head>
 
       <main className={styles.main}>
-        <PrismicRichText field={homepage.document.data.title} />
+          <div id="content" className="pb-5">
+              <div className="darkblue">
+                  <div className="container py-8">
+                      <div className="row d-flex align-items-center text-white">
+                          <div className="col-12 col-sm-8 col-md-7 col-lg-6 col-xl-6">
+                              <PrismicRichText field={homepage.document.data.title} />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div className="container">
+                  <SliceZone
+                      slices={homepage.document.data.slices}
+                      components={{
+                          text_and_image: TextAndImage,
+                      }}
+                  />
+              </div>
+          </div>
       </main>
 
     </div>
