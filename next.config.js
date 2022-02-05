@@ -12,6 +12,10 @@ const nextConfig = {
     path: '/',
   },
   tsBuildInfoFile: '.tsbuildinfo',
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 }
 
 module.exports = nextConfig
