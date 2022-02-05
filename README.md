@@ -22,14 +22,6 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-To see the Storybook designs:
-
-```bash
-yarn storybook
-```
-
-Open [http://localhost:6006](http://localhost:6006) with your browser to see the result.
-
 To manage content types and slices in Prismic CMS run
 
 ```bash
