@@ -1,4 +1,4 @@
-import {PrismicDocumentWithUID, RichTextField, SliceZone} from "@prismicio/types";
+import {PrismicDocumentWithUID, RichTextField, SliceZone, Slice} from "@prismicio/types";
 
 export interface Homepage extends PrismicDocumentWithUID {
     type: "homepage";

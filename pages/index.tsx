@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Client } from '../utils/prismicHelpers'
-import {PrismicRichText, SliceZone} from "@prismicio/react";
+import {PrismicRichText, SliceZone, SliceZoneComponents} from "@prismicio/react";
 import TextAndImage from '../slices/TextAndImage'
 import {Homepage} from "../utils/types";
 
@@ -21,7 +21,7 @@ export const getServerSideProps: GetServerSideProps<HomepageDocument> = async (c
 }
 
 export default function Home( homepage: HomepageDocument ) {
-console.log(homepage);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -46,6 +46,7 @@ console.log(homepage);
                   <SliceZone
                       slices={homepage.document.data.slices}
                       components={{
+                          // @ts-ignore
                           text_and_image: TextAndImage,
                       }}
                   />

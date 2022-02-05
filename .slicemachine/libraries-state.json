@@ -70,13 +70,13 @@
         "meta": {
           "fileName": "index",
           "isDirectory": true,
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
-            "path": "/Users/johnennew/Sites/minster-scouts-prismic/.slicemachine/assets/slices/TextAndImage/default-slice/preview.png",
-            "width": 800,
-            "height": 75
+            "path": "/Users/johnennew/Sites/minster-scouts-prismic/slices/TextAndImage/default-slice/preview.png",
+            "width": 2272,
+            "height": 620
           }
         }
       }
