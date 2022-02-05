@@ -10,7 +10,7 @@
           "text": [
             {
               "type": "paragraph",
-              "text": "Irure occaecat dolore reprehenderit. Culpa velit eu enim ullamco magna consectetur dolor. Proident proident proident mollit proident aliqua dolore voluptate do laborum aliquip consectetur amet nulla reprehenderit.",
+              "text": "Est fugiat et enim esse consequat.",
               "spans": []
             }
           ],
@@ -21,13 +21,38 @@
             },
             "alt": "Placeholder image",
             "copyright": null,
-            "url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&h=500&fit=crop"
+            "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?w=900&h=500&fit=crop"
           }
         }
       }
-    ]
+    ],
+    "Meetings": {
+      "default-slice": {
+        "primary": {}
+      }
+    }
   },
   "_cts": {
-    "homepage": {}
+    "homepage": {},
+    "site-configuration": {
+      "beaversMeetingsDescription": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "cubsMeetingsDescription": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "scoutsMeetingsDescription": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
   }
 }

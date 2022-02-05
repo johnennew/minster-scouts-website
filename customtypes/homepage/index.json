@@ -19,6 +19,9 @@
           "choices": {
             "text_and_image": {
               "type": "SharedSlice"
+            },
+            "meetings": {
+              "type": "SharedSlice"
             }
           }
         }

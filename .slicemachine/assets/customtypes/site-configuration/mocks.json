@@ -1,0 +1,28 @@
+{
+  "id": "232f032f-39e8-40fd-9d63-4af2c398a055",
+  "uid": "cum-aut-laborum",
+  "type": "site-configuration",
+  "data": {
+    "beaversMeetingsDescription": [
+      {
+        "type": "paragraph",
+        "text": "Cupidatat velit tempor dolor eu aliqua ad excepteur excepteur aute do. Aliquip irure exercitation sint eu consectetur adipisicing officia quis excepteur culpa est duis.",
+        "spans": []
+      }
+    ],
+    "cubsMeetingsDescription": [
+      {
+        "type": "paragraph",
+        "text": "Lorem reprehenderit sint mollit eu proident ut.",
+        "spans": []
+      }
+    ],
+    "scoutsMeetingsDescription": [
+      {
+        "type": "paragraph",
+        "text": "Ad mollit commodo proident. Adipisicing reprehenderit non deserunt.",
+        "spans": []
+      }
+    ]
+  }
+}

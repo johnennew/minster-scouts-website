@@ -4,23 +4,27 @@ import styles from '../styles/Home.module.css'
 import { Client } from '../utils/prismicHelpers'
 import {PrismicRichText, SliceZone, SliceZoneComponents} from "@prismicio/react";
 import TextAndImage from '../slices/TextAndImage'
-import {Homepage} from "../utils/types";
+import {Homepage, SiteConfiguration} from "../utils/types";
+import Meetings from "../slices/Meetings";
 
-interface HomepageDocument {
-    document: Homepage;
+interface PageData {
+    page: Homepage;
+    config: SiteConfiguration;
 }
 
-export const getServerSideProps: GetServerSideProps<HomepageDocument> = async (context) => {
-  const document = await Client().getSingle<Homepage>('homepage');
+export const getServerSideProps: GetServerSideProps<PageData> = async (context) => {
+  const homepage = await Client().getSingle<Homepage>('homepage');
+  const siteConfig = await Client().getSingle<SiteConfiguration>('site-configuration');
 
   return {
     props: {
-      document
+        page: homepage,
+        config: siteConfig
     },
   }
 }
 
-export default function Home( homepage: HomepageDocument ) {
+export default function Home( pageData: PageData ) {
 
   return (
     <div className={styles.container}>
@@ -36,7 +40,7 @@ export default function Home( homepage: HomepageDocument ) {
                   <div className="container py-8">
                       <div className="row d-flex align-items-center text-white">
                           <div className="col-12 col-sm-8 col-md-7 col-lg-6 col-xl-6">
-                              <PrismicRichText field={homepage.document.data.title} />
+                              <PrismicRichText field={pageData.page.data.title} />
                           </div>
                       </div>
                   </div>
@@ -44,11 +48,14 @@ export default function Home( homepage: HomepageDocument ) {
 
               <div className="container">
                   <SliceZone
-                      slices={homepage.document.data.slices}
+                      slices={pageData.page.data.slices}
                       components={{
                           // @ts-ignore
                           text_and_image: TextAndImage,
+                          // @ts-ignore
+                          meetings: Meetings,
                       }}
+                      context={pageData.config}
                   />
               </div>
           </div>

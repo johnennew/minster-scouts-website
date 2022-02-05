@@ -16,21 +16,22 @@ type TextAndImageProps = {
 
 const TextAndImage = ({ slice }: TextAndImageProps) => (
   <section>
-      <div className="text">
-          {
-              slice.primary.text ?
-              <PrismicRichText field={slice.primary.text}/>
-              : <p>start by editing this slice from inside Prismic builder!</p>
-          }
-      </div>
+      <div className="container">
+          <div className="text">
+              {
+                  slice.primary.text ?
+                  <PrismicRichText field={slice.primary.text}/>
+                  : <p>start by editing this slice from inside Prismic builder!</p>
+              }
+          </div>
 
-      <div className="image">
-          <img src={slice.primary.image.url ? slice.primary.image.url : ''} alt={slice.primary.image.alt ? slice.primary.image.alt : ''} />
+          <div className="image">
+              <img src={slice.primary.image.url ? slice.primary.image.url : ''} alt={slice.primary.image.alt ? slice.primary.image.alt : ''} />
+          </div>
       </div>
-
 
       <style jsx>{`
-        section {
+        .container {
             display: flex;
             flex-direction: row; 
             flex-wrap: wrap;
@@ -44,7 +45,6 @@ const TextAndImage = ({ slice }: TextAndImageProps) => (
             max-height: 300px;
         }
         .text {
-            max-width: 680px;
             margin: auto;
         }
         

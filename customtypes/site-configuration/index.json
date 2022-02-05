@@ -1,0 +1,37 @@
+{
+  "id": "site-configuration",
+  "label": "Site configuration",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "beaversMeetingsDescription": {
+        "config": {
+          "label": "Beavers meetings description",
+          "placeholder": "Get in touch for meeting schedule.",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl,heading3"
+        },
+        "type": "StructuredText"
+      },
+      "cubsMeetingsDescription": {
+        "config": {
+          "label": "Cubs meetings description",
+          "placeholder": "Get in touch for meeting schedule.",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        },
+        "type": "StructuredText"
+      },
+      "scoutsMeetingsDescription": {
+        "config": {
+          "label": "scoutsMeetingsDescription",
+          "placeholder": "Get in touch for meeting schedule.",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        },
+        "type": "StructuredText"
+      }
+    }
+  }
+}

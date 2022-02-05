@@ -1,0 +1,25 @@
+{
+  "id": "meetings",
+  "type": "SharedSlice",
+  "name": "Meetings",
+  "description": "Meetings",
+  "variations": [
+    {
+      "id": "default-slice",
+      "name": "Default slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Meetings",
+      "primary": {
+        "title": {
+          "config": {
+            "label": "Enter the title text",
+            "placeholder": "Sections we run"
+          },
+          "type": "Text"
+        }
+      },
+      "items": {}
+    }
+  ]
+}

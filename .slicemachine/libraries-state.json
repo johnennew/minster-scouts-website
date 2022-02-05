@@ -1,6 +1,54 @@
 {
   "slices": {
     "components": {
+      "meetings": {
+        "library": "slices",
+        "id": "meetings",
+        "name": "Meetings",
+        "description": "Meetings",
+        "model": {
+          "id": "meetings",
+          "type": "SharedSlice",
+          "name": "Meetings",
+          "description": "Meetings",
+          "variations": [
+            {
+              "id": "default-slice",
+              "name": "Default slice",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Meetings",
+              "primary": {
+                "title": {
+                  "config": {
+                    "label": "Enter the title text",
+                    "placeholder": "Sections we run"
+                  },
+                  "type": "Text"
+                }
+              },
+              "items": {}
+            }
+          ]
+        },
+        "mocks": {
+          "default-slice": {
+            "variation": "default-slice",
+            "name": "Default slice",
+            "slice_type": "meetings",
+            "items": [],
+            "primary": {
+              "title": "engineer world-class convergence"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "isDirectory": true,
+          "extension": "tsx"
+        },
+        "screenshotPaths": {}
+      },
       "text_and_image": {
         "library": "slices",
         "id": "text_and_image",
@@ -51,7 +99,7 @@
               "text": [
                 {
                   "type": "paragraph",
-                  "text": "Est fugiat et enim esse consequat.",
+                  "text": "Sit cupidatat consequat non. Ex dolore ut culpa aliquip labore pariatur aliquip mollit anim aliqua cupidatat do ipsum laborum id.",
                   "spans": []
                 }
               ],
@@ -62,7 +110,7 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?w=900&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?w=900&h=500&fit=crop"
               }
             }
           }
