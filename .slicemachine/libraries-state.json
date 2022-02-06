@@ -1,6 +1,69 @@
 {
   "slices": {
     "components": {
+      "image": {
+        "library": "slices",
+        "id": "image",
+        "name": "Image",
+        "description": "Image",
+        "model": {
+          "id": "image",
+          "type": "SharedSlice",
+          "name": "Image",
+          "description": "Image",
+          "variations": [
+            {
+              "id": "default-slice",
+              "name": "Default slice",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Image",
+              "primary": {
+                "image": {
+                  "config": {
+                    "label": "image",
+                    "constraint": {},
+                    "thumbnails": []
+                  },
+                  "type": "Image"
+                }
+              },
+              "items": {}
+            }
+          ]
+        },
+        "mocks": {
+          "default-slice": {
+            "variation": "default-slice",
+            "name": "Default slice",
+            "slice_type": "image",
+            "items": [],
+            "primary": {
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?w=900&h=500&fit=crop"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "isDirectory": true,
+          "extension": "tsx"
+        },
+        "screenshotPaths": {
+          "default-slice": {
+            "path": "/Users/johnennew/Sites/minster-scouts-prismic/slices/Image/default-slice/preview.png",
+            "width": 425,
+            "height": 328
+          }
+        }
+      },
       "meetings": {
         "library": "slices",
         "id": "meetings",
@@ -38,7 +101,7 @@
             "slice_type": "meetings",
             "items": [],
             "primary": {
-              "title": "engineer world-class convergence"
+              "title": "transition web-enabled metrics"
             }
           }
         },
@@ -47,7 +110,75 @@
           "isDirectory": true,
           "extension": "tsx"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default-slice": {
+            "path": "/Users/johnennew/Sites/minster-scouts-prismic/slices/Meetings/default-slice/preview.png",
+            "width": 914,
+            "height": 490
+          }
+        }
+      },
+      "text": {
+        "library": "slices",
+        "id": "text",
+        "name": "Text",
+        "description": "Text",
+        "model": {
+          "id": "text",
+          "type": "SharedSlice",
+          "name": "Text",
+          "description": "Text",
+          "variations": [
+            {
+              "id": "default-slice",
+              "name": "Default slice",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Text",
+              "primary": {
+                "text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Text",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,o-list-item,list-item,embed,image,hyperlink,em"
+                  }
+                }
+              },
+              "items": {}
+            }
+          ]
+        },
+        "mocks": {
+          "default-slice": {
+            "variation": "default-slice",
+            "name": "Default slice",
+            "slice_type": "text",
+            "items": [],
+            "primary": {
+              "text": [
+                {
+                  "type": "paragraph",
+                  "text": "Officia magna velit laboris excepteur non non cillum mollit ipsum excepteur non commodo amet. Reprehenderit mollit consectetur mollit minim ut quis enim cillum commodo excepteur.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "isDirectory": true,
+          "extension": "tsx"
+        },
+        "screenshotPaths": {
+          "default-slice": {
+            "path": "/Users/johnennew/Sites/minster-scouts-prismic/slices/Text/default-slice/preview.png",
+            "width": 904,
+            "height": 275
+          }
+        }
       },
       "text_and_image": {
         "library": "slices",
@@ -99,7 +230,7 @@
               "text": [
                 {
                   "type": "paragraph",
-                  "text": "Sit cupidatat consequat non. Ex dolore ut culpa aliquip labore pariatur aliquip mollit anim aliqua cupidatat do ipsum laborum id.",
+                  "text": "Sint incididunt ea sunt do sint tempor cillum aliquip Lorem. Do sit anim irure Lorem ullamco velit ea pariatur irure et exercitation ad consectetur. Velit officia excepteur laboris tempor proident occaecat eu irure anim est enim mollit excepteur.",
                   "spans": []
                 }
               ],
@@ -110,7 +241,7 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?w=900&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=900&h=500&fit=crop"
               }
             }
           }

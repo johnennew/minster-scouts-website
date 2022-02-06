@@ -10,7 +10,7 @@
           "text": [
             {
               "type": "paragraph",
-              "text": "Est fugiat et enim esse consequat.",
+              "text": "Aliquip laboris deserunt dolor tempor sint proident enim culpa ex ipsum.",
               "spans": []
             }
           ],
@@ -26,11 +26,53 @@
         }
       }
     ],
-    "Meetings": {
-      "default-slice": {
-        "primary": {}
+    "Meetings": [
+      {
+        "variation": "default-slice",
+        "name": "Default slice",
+        "slice_type": "meetings",
+        "items": [],
+        "primary": {
+          "title": "monetize plug-and-play infrastructures"
+        }
       }
-    }
+    ],
+    "Text": [
+      {
+        "variation": "default-slice",
+        "name": "Default slice",
+        "slice_type": "text",
+        "items": [],
+        "primary": {
+          "text": [
+            {
+              "type": "paragraph",
+              "text": "Consequat aliquip culpa elit et anim reprehenderit voluptate ullamco dolor.",
+              "spans": []
+            }
+          ]
+        }
+      }
+    ],
+    "Image": [
+      {
+        "variation": "default-slice",
+        "name": "Default slice",
+        "slice_type": "image",
+        "items": [],
+        "primary": {
+          "image": {
+            "dimensions": {
+              "width": 900,
+              "height": 500
+            },
+            "alt": "Placeholder image",
+            "copyright": null,
+            "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=900&h=500&fit=crop"
+          }
+        }
+      }
+    ]
   },
   "_cts": {
     "homepage": {},
