@@ -99,6 +99,7 @@ export default function Home( pageData: PageData ) {
             footer > .container {
                 display: flex;
                 flex-direction: column;
+                margin-bottom: 0 !important;
             }
             
             footer > .container > .row {
