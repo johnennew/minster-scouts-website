@@ -117,7 +117,8 @@ export default function Home( pageData: PageData ) {
             
             .footer-links > li {
                 display: inline-block;
-                margin-right: 2rem;
+                margin-left: 1rem;
+                margin-right: 1rem;
                 margin-bottom: 1rem;
                 margin-top: 0;
             }
