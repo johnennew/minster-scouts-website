@@ -46,7 +46,7 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?w=900&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
               }
             }
           }
@@ -101,7 +101,7 @@
             "slice_type": "meetings",
             "items": [],
             "primary": {
-              "title": "transition web-enabled metrics"
+              "title": "exploit back-end convergence"
             }
           }
         },
@@ -160,7 +160,7 @@
               "text": [
                 {
                   "type": "paragraph",
-                  "text": "Officia magna velit laboris excepteur non non cillum mollit ipsum excepteur non commodo amet. Reprehenderit mollit consectetur mollit minim ut quis enim cillum commodo excepteur.",
+                  "text": "Magna voluptate proident nulla.",
                   "spans": []
                 }
               ]
@@ -230,7 +230,7 @@
               "text": [
                 {
                   "type": "paragraph",
-                  "text": "Sint incididunt ea sunt do sint tempor cillum aliquip Lorem. Do sit anim irure Lorem ullamco velit ea pariatur irure et exercitation ad consectetur. Velit officia excepteur laboris tempor proident occaecat eu irure anim est enim mollit excepteur.",
+                  "text": "Fugiat sit nulla aute ullamco ullamco sint incididunt in velit aute tempor id.",
                   "spans": []
                 }
               ],
@@ -241,7 +241,7 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=900&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?w=900&h=500&fit=crop"
               }
             }
           }
@@ -256,6 +256,72 @@
             "path": "/Users/johnennew/Sites/minster-scouts-prismic/slices/TextAndImage/default-slice/preview.png",
             "width": 2272,
             "height": 620
+          }
+        }
+      },
+      "video": {
+        "library": "slices",
+        "id": "video",
+        "name": "Video",
+        "description": "Video",
+        "model": {
+          "id": "video",
+          "type": "SharedSlice",
+          "name": "Video",
+          "description": "Video",
+          "variations": [
+            {
+              "id": "default-slice",
+              "name": "Default slice",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Video",
+              "primary": {
+                "video": {
+                  "config": {
+                    "label": "Enter YouTube URL",
+                    "placeholder": "https://youtu.be/Jlrimx5fjTQ"
+                  },
+                  "type": "Embed"
+                }
+              },
+              "items": {}
+            }
+          ]
+        },
+        "mocks": {
+          "default-slice": {
+            "variation": "default-slice",
+            "name": "Default slice",
+            "slice_type": "video",
+            "items": [],
+            "primary": {
+              "video": {
+                "url": "https://twitter.com/prismicio/status/1354112310252630016",
+                "author_name": "Prismic",
+                "author_url": "https://twitter.com/prismicio",
+                "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">We&#39;re launching a new <a href=\"https://twitter.com/hashtag/SliceContest?src=hash&amp;ref_src=twsrc%5Etfw\">#SliceContest</a> tomorrow along with Slice Machine upgrades.<br><br>Want to know more? Join us at tomorrow&#39;s Product Meet-up👇<a href=\"https://t.co/prYSypiAvB\">https://t.co/prYSypiAvB</a><br><br>We can&#39;t tell you any further details for now, but here&#39;s a sneak peek at the prizes👀 <a href=\"https://t.co/fV1eoGlEBh\">pic.twitter.com/fV1eoGlEBh</a></p>&mdash; Prismic (@prismicio) <a href=\"https://twitter.com/prismicio/status/1354112310252630016?ref_src=twsrc%5Etfw\">January 26, 2021</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
+                "width": 550,
+                "height": null,
+                "type": "rich",
+                "cache_age": "3153600000",
+                "provider_name": "Twitter",
+                "provider_url": "http://www.twitter.com/",
+                "version": "1.0"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "isDirectory": true,
+          "extension": "tsx"
+        },
+        "screenshotPaths": {
+          "default-slice": {
+            "path": "/Users/johnennew/Sites/minster-scouts-prismic/slices/Video/default-slice/preview.png",
+            "width": 1486,
+            "height": 798
           }
         }
       }

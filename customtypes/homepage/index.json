@@ -28,6 +28,9 @@
             },
             "image": {
               "type": "SharedSlice"
+            },
+            "video": {
+              "type": "SharedSlice"
             }
           }
         }

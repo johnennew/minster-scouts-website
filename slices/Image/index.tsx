@@ -1,12 +1,9 @@
 import React from 'react'
-import {ImageField, Slice} from "@prismicio/types";
+import * as prismicT from "@prismicio/types";
 
-interface ImageType extends Slice {
-    primary: {
-        image: ImageField;
-    }
-    slice_type: "image";
-}
+type ImageType = prismicT.Slice<"image", {
+    image: prismicT.ImageField;
+}>
 
 type ImageProps = {
     slice: ImageType;

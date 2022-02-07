@@ -1,13 +1,11 @@
 import React from 'react'
 import {RichTextField, Slice} from "@prismicio/types";
 import {PrismicRichText} from "@prismicio/react";
+import * as prismicT from "@prismicio/types";
 
-interface TextType extends Slice {
-    primary: {
-        text: RichTextField;
-    }
-    slice_type: "text";
-}
+type TextType = prismicT.Slice<"text", {
+    text: RichTextField;
+}>
 
 type TextProps = {
     slice: TextType;

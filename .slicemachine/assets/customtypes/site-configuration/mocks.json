@@ -1,28 +1,30 @@
 {
-  "id": "232f032f-39e8-40fd-9d63-4af2c398a055",
-  "uid": "cum-aut-laborum",
+  "id": "2513a978-a1b1-40f2-98f1-33340a3e0576",
+  "uid": "amet-ullam-fugiat",
   "type": "site-configuration",
   "data": {
     "beaversMeetingsDescription": [
       {
         "type": "paragraph",
-        "text": "Cupidatat velit tempor dolor eu aliqua ad excepteur excepteur aute do. Aliquip irure exercitation sint eu consectetur adipisicing officia quis excepteur culpa est duis.",
+        "text": "Dolor voluptate sunt minim amet esse voluptate mollit laborum aliquip mollit aliqua velit occaecat non sit.",
         "spans": []
       }
     ],
     "cubsMeetingsDescription": [
       {
         "type": "paragraph",
-        "text": "Lorem reprehenderit sint mollit eu proident ut.",
+        "text": "Proident laboris id cupidatat laboris est adipisicing do officia. Duis minim in velit laborum in excepteur dolore pariatur nostrud excepteur fugiat pariatur cillum velit non. Laboris consequat dolore nisi ad laborum anim eiusmod et ipsum ea eiusmod veniam.",
         "spans": []
       }
     ],
     "scoutsMeetingsDescription": [
       {
         "type": "paragraph",
-        "text": "Ad mollit commodo proident. Adipisicing reprehenderit non deserunt.",
+        "text": "Do incididunt ad eu Lorem ut nisi aute nostrud adipisicing eu sit non. Ipsum ullamco mollit incididunt eu enim sint dolore occaecat deserunt. Sunt laborum magna duis in laboris occaecat dolore nostrud consequat amet est aliqua sunt.",
         "spans": []
       }
-    ]
+    ],
+    "defaultTitle": "e-enable 24/7 schemas",
+    "defaultDescription": "scale cross-media applications"
   }
 }

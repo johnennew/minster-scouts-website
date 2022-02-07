@@ -7,16 +7,16 @@
     "Main": {
       "beaversMeetingsDescription": {
         "config": {
-          "label": "Beavers meetings description",
+          "label": "When do the Beavers reguarly meet",
           "placeholder": "Get in touch for meeting schedule.",
           "allowTargetBlank": true,
-          "multi": "paragraph,preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl,heading3"
+          "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         },
         "type": "StructuredText"
       },
       "cubsMeetingsDescription": {
         "config": {
-          "label": "Cubs meetings description",
+          "label": "When do the Cubs reguarly meet",
           "placeholder": "Get in touch for meeting schedule.",
           "allowTargetBlank": true,
           "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
@@ -25,12 +25,28 @@
       },
       "scoutsMeetingsDescription": {
         "config": {
-          "label": "scoutsMeetingsDescription",
+          "label": "When do the Scouts reguarly meet",
           "placeholder": "Get in touch for meeting schedule.",
           "allowTargetBlank": true,
           "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         },
         "type": "StructuredText"
+      }
+    },
+    "Metadata": {
+      "defaultTitle": {
+        "config": {
+          "label": "The default title tag to use",
+          "placeholder": "1st Minster Scouts"
+        },
+        "type": "Text"
+      },
+      "defaultDescription": {
+        "config": {
+          "label": "The default description to use",
+          "placeholder": "About the 1st Minster Scout Group"
+        },
+        "type": "Text"
       }
     }
   }

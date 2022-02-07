@@ -1,14 +1,11 @@
 import React from 'react'
-import {Slice, TitleField} from "@prismicio/types";
 import {SiteConfiguration} from "../../utils/types";
 import {PrismicRichText} from "@prismicio/react";
+import * as prismicT from "@prismicio/types";
 
-interface MeetingsType extends Slice {
-    primary: {
-        title: TitleField;
-    }
-    slice_type: "meetings";
-}
+type MeetingsType = prismicT.Slice<"meetings", {
+    title: prismicT.TitleField;
+}>
 
 type MeetingsProps = {
     slice: MeetingsType;

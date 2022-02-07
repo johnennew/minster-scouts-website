@@ -1,14 +1,11 @@
 import React from 'react'
-import {ImageField, RichTextField, Slice} from "@prismicio/types";
 import {PrismicRichText} from "@prismicio/react";
+import * as prismicT from "@prismicio/types";
 
-interface TextAndImageType extends Slice {
-    primary: {
-        text: RichTextField;
-        image: ImageField;
-    }
-    slice_type: "text_and_image";
-}
+type TextAndImageType = prismicT.Slice<"text_and_image", {
+    image: prismicT.ImageField;
+    text: prismicT.RichTextField;
+}>
 
 type TextAndImageProps = {
     slice: TextAndImageType;

@@ -1,18 +1,18 @@
-import {PrismicDocumentWithUID, RichTextField, SliceZone} from "@prismicio/types";
+/**
+ * @see https://prismic.io/blog/updated-javascript-client-and-helpers
+ */
 
-export interface Homepage extends PrismicDocumentWithUID {
-    type: "homepage";
-    data: {
-        title: RichTextField;
-        slices: SliceZone;
-    }
-}
+import * as prismicT from '@prismicio/types'
 
-export interface SiteConfiguration extends PrismicDocumentWithUID {
-    type: "site-configuration";
-    data: {
-        beaversMeetingsDescription: RichTextField;
-        cubsMeetingsDescription: RichTextField;
-        scoutsMeetingsDescription: RichTextField;
-    }
-}
+export type Homepage = prismicT.PrismicDocument<{
+    title: prismicT.RichTextField;
+    slices: prismicT.SliceZone;
+}>
+
+export type SiteConfiguration = prismicT.PrismicDocument<{
+    beaversMeetingsDescription: prismicT.RichTextField;
+    cubsMeetingsDescription: prismicT.RichTextField;
+    scoutsMeetingsDescription: prismicT.RichTextField;
+    defaultTitle: prismicT.KeyTextField;
+    defaultDescription: prismicT.KeyTextField;
+}>

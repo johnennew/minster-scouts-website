@@ -10,7 +10,7 @@
           "text": [
             {
               "type": "paragraph",
-              "text": "Aliquip laboris deserunt dolor tempor sint proident enim culpa ex ipsum.",
+              "text": "Culpa velit incididunt consectetur officia labore nulla.",
               "spans": []
             }
           ],
@@ -21,7 +21,7 @@
             },
             "alt": "Placeholder image",
             "copyright": null,
-            "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?w=900&h=500&fit=crop"
+            "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04?w=900&h=500&fit=crop"
           }
         }
       }
@@ -33,7 +33,7 @@
         "slice_type": "meetings",
         "items": [],
         "primary": {
-          "title": "monetize plug-and-play infrastructures"
+          "title": "transition web-enabled metrics"
         }
       }
     ],
@@ -47,7 +47,7 @@
           "text": [
             {
               "type": "paragraph",
-              "text": "Consequat aliquip culpa elit et anim reprehenderit voluptate ullamco dolor.",
+              "text": "Officia magna velit laboris excepteur non non cillum mollit ipsum excepteur non commodo amet. Reprehenderit mollit consectetur mollit minim ut quis enim cillum commodo excepteur.",
               "spans": []
             }
           ]
@@ -68,7 +68,32 @@
             },
             "alt": "Placeholder image",
             "copyright": null,
-            "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=900&h=500&fit=crop"
+            "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?w=900&h=500&fit=crop"
+          }
+        }
+      }
+    ],
+    "Video": [
+      {
+        "variation": "default-slice",
+        "name": "Default slice",
+        "slice_type": "video",
+        "items": [],
+        "primary": {
+          "video": {
+            "title": "Scouts made me",
+            "author_name": "Scouts",
+            "author_url": "https://www.youtube.com/user/UKScoutAssociation",
+            "type": "video",
+            "height": 113,
+            "width": 200,
+            "version": "1.0",
+            "provider_name": "YouTube",
+            "provider_url": "https://www.youtube.com/",
+            "thumbnail_height": 360,
+            "thumbnail_width": 480,
+            "thumbnail_url": "https://i.ytimg.com/vi/Jlrimx5fjTQ/hqdefault.jpg",
+            "html": "<iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/Jlrimx5fjTQ?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
           }
         }
       }

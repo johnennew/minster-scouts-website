@@ -2,15 +2,16 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Client } from '../utils/prismicHelpers'
-import {PrismicRichText, SliceZone, SliceZoneComponents} from "@prismicio/react";
+import {PrismicRichText, SliceZone} from "@prismicio/react";
 import TextAndImage from '../slices/TextAndImage'
 import {Homepage, SiteConfiguration} from "../utils/types";
 import Meetings from "../slices/Meetings";
 import Text from "../slices/Text";
 import Image from "../slices/Image";
 import React from "react";
+import Video from "../slices/Video";
 
-interface PageData {
+type PageData = {
     page: Homepage;
     config: SiteConfiguration;
 }
@@ -32,13 +33,12 @@ export default function Home( pageData: PageData ) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>1st Minster Scouts</title>
-        <meta name="description" content="Information about the 1st Minster Scout Group in Thanet, Kent" />
+        <title>{pageData.config.data.defaultTitle}</title>
+        <meta name="description" content={pageData.config.data.defaultDescription ? pageData.config.data.defaultDescription : ''} />
         <link rel="icon" href="/favicon-16x16.png" />
       </Head>
 
       <main className={styles.main}>
-          <div id="content" className="pb-5">
               <div className="title">
                   <PrismicRichText field={pageData.page.data.title} />
               </div>
@@ -55,6 +55,8 @@ export default function Home( pageData: PageData ) {
                           text: Text,
                           // @ts-ignore
                           image: Image,
+                          // @ts-ignore
+                          video: Video,
                       }}
                       context={pageData.config}
                   />
@@ -77,7 +79,6 @@ export default function Home( pageData: PageData ) {
                       </div>
                   </div>
               </footer>
-          </div>
       </main>
 
         <style jsx>{`
