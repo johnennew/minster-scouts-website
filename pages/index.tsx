@@ -74,7 +74,7 @@ export default function Home( pageData: PageData ) {
                           <ul className="footer-links">
                               <li><a href="https://www.thanetscouts.org.uk/">Thanet Scouts</a></li>
                               <li><a href="https://www.scouts.org.uk/">UK Scouts</a></li>
-                              <li><a href="https://www.scout.org/worldwide">Global Scouts</a></li>
+                              <li><a href="https://www.scout.org/">Global Scouts</a></li>
                           </ul>
                       </div>
                   </div>
