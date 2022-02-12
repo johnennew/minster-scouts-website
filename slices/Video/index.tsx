@@ -21,7 +21,6 @@ const createVideoMarkup = (html: string) => {
 const Image = ({ slice }: VideoProps) => {
 
     return <section>
-        {console.log(slice)}
         <div className="container">
             {slice.primary.video.html ?
                 <div className="video" dangerouslySetInnerHTML={createVideoMarkup(slice.primary.video.html)}></div>

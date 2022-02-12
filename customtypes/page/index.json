@@ -1,0 +1,47 @@
+{
+  "id": "page",
+  "label": "Page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "config": {
+          "label": "Title of the page",
+          "placeholder": ""
+        },
+        "type": "Text"
+      },
+      "slug": {
+        "config": {
+          "label": "The URL of the page (e.g. /about)",
+          "placeholder": "/about"
+        },
+        "type": "Text"
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "image": {
+              "type": "SharedSlice"
+            },
+            "meetings": {
+              "type": "SharedSlice"
+            },
+            "text": {
+              "type": "SharedSlice"
+            },
+            "text_and_image": {
+              "type": "SharedSlice"
+            },
+            "video": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

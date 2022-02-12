@@ -8,15 +8,16 @@ import {
   linkResolver,
   Router
 } from '../prismicConfiguration'
+import {NextApiRequest} from "next";
 
 // -- @prismicio/client initialisation
 // Initialises the Prismic Client that's used for querying the API and passes it any query options.
-export const Client = (req = null) => (
+export const Client = (req:NextApiRequest|null = null) => (
     prismic.createClient( prismic.getEndpoint(repoName), createClientOptions(req, accessToken))
 );
 
 // Options to be passed to the Client
-const createClientOptions = (req = null, prismicAccessToken: string|null = null, routes:boolean = true) => {
+const createClientOptions = (req:NextApiRequest|null = null, prismicAccessToken: string|null = null, routes:boolean = true) => {
   const reqOption = req ? { req } : {}
   const accessTokenOption = prismicAccessToken ? { accessToken: prismicAccessToken } : {}
   const routesOption = routes ? { routes: Router.routes } : {}

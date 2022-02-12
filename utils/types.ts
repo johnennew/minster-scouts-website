@@ -9,6 +9,12 @@ export type Homepage = prismicT.PrismicDocument<{
     slices: prismicT.SliceZone;
 }>
 
+export type Page = prismicT.PrismicDocument<{
+    title: prismicT.KeyTextField;
+    slug: prismicT.KeyTextField;
+    slices: prismicT.SliceZone;
+}>
+
 export type SiteConfiguration = prismicT.PrismicDocument<{
     beaversMeetingsDescription: prismicT.RichTextField;
     cubsMeetingsDescription: prismicT.RichTextField;

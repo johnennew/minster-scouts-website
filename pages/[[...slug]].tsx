@@ -1,52 +1,114 @@
 import { GetServerSideProps } from 'next'
+import React from "react"
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Client } from '../utils/prismicHelpers'
-import {PrismicRichText, SliceZone} from "@prismicio/react";
+import {SliceZone} from "@prismicio/react"
+import {Page, SiteConfiguration} from "../utils/types"
+import * as prismic from "@prismicio/client";
+
+// Slices
 import TextAndImage from '../slices/TextAndImage'
-import {Homepage, SiteConfiguration} from "../utils/types";
 import Meetings from "../slices/Meetings";
 import Text from "../slices/Text";
 import Image from "../slices/Image";
-import React from "react";
 import Video from "../slices/Video";
 
+// Custom components
+import Loader from '../components/Loader'
+import Custom404 from './404'
+import {ParsedUrlQuery} from "querystring";
+import useUpdatePreviewRef from "../utils/useUpdatePreviewRef";
+
 type PageData = {
-    page: Homepage;
+    page: Page;
     config: SiteConfiguration;
+    previewRef: string | null;
+    statusCode: 200;
 }
 
-export const getServerSideProps: GetServerSideProps<PageData> = async (context) => {
-  const homepage = await Client().getSingle<Homepage>('homepage');
-  const siteConfig = await Client().getSingle<SiteConfiguration>('site-configuration');
-
-  return {
-    props: {
-        page: homepage,
-        config: siteConfig
-    },
-  }
+type PageNotFound = {
+    statusCode: 404;
 }
 
-export default function Home( pageData: PageData ) {
+type PreviewData = {
+    ref: string;
+}
+
+const getSlug = (params: ParsedUrlQuery | undefined): string => {
+    if (params && params.slug && Array.isArray(params.slug)) {
+        return '/' + params.slug.join('/')
+    }
+    return '/';
+}
+
+export const getServerSideProps: GetServerSideProps<PageData | PageNotFound, ParsedUrlQuery, PreviewData | undefined> = async ({ params, previewData, res }) => {
+    const previewRef = previewData ? previewData.ref : null
+    const ref = previewRef ? { ref: previewRef } : {}
+
+    const query = {
+        ...ref,
+        predicates: [
+            prismic.predicate.at('document.type', 'page'),
+            prismic.predicate.any('my.page.slug', [getSlug(params)]),
+        ]
+    }
+
+    try {
+        const page = await Client().getFirst<Page>(query);
+        const siteConfig = await Client().getSingle<SiteConfiguration>('site-configuration');
+
+        return {
+            props: {
+                page: page,
+                config: siteConfig,
+                previewRef: previewRef,
+                statusCode: 200
+            },
+        }
+    }
+    catch(e) {
+        res.statusCode = 404;
+        return {
+            props: {
+                statusCode: 404
+            },
+        }
+    }
+}
+
+const Page = ({ page, config, previewRef }: PageData) => {
+
+    useUpdatePreviewRef(previewRef || '', page && page.id ? page.id : '');
+
+    const router = useRouter();
+
+    if (router.isFallback) {
+        return <Loader />
+    }
+
+    if (!page || !page.id) {
+        return <Custom404 />
+    }
 
   return (
     <div className={styles.container}>
       <Head>
-        <title>{pageData.config.data.defaultTitle}</title>
-        <meta name="description" content={pageData.config.data.defaultDescription ? pageData.config.data.defaultDescription : ''} />
+        <title>{config.data.defaultTitle}</title>
+        <meta name="description" content={config.data.defaultDescription ? config.data.defaultDescription : ''} />
         <link rel="icon" href="/favicon-16x16.png" />
         <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=minster-scouts"></script>
       </Head>
 
       <main className={styles.main}>
               <div className="title">
-                  <PrismicRichText field={pageData.page.data.title} />
+                  <h1>{page.data.title}</h1>
               </div>
 
               <div className="container">
                   <SliceZone
-                      slices={pageData.page.data.slices}
+                      slices={page.data.slices}
                       components={{
                           // @ts-ignore
                           text_and_image: TextAndImage,
@@ -59,7 +121,7 @@ export default function Home( pageData: PageData ) {
                           // @ts-ignore
                           video: Video,
                       }}
-                      context={pageData.config}
+                      context={config}
                   />
               </div>
 
@@ -129,3 +191,5 @@ export default function Home( pageData: PageData ) {
     </div>
   )
 }
+
+export default Page;
