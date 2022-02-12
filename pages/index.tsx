@@ -36,6 +36,7 @@ export default function Home( pageData: PageData ) {
         <title>{pageData.config.data.defaultTitle}</title>
         <meta name="description" content={pageData.config.data.defaultDescription ? pageData.config.data.defaultDescription : ''} />
         <link rel="icon" href="/favicon-16x16.png" />
+        <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=minster-scouts"></script>
       </Head>
 
       <main className={styles.main}>
