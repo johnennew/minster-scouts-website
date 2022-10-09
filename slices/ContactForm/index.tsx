@@ -9,7 +9,7 @@ type ContactFormProps = {
 
 const ContactForm = ({ slice }: ContactFormProps) => {
     const contactFormInitialState = {
-        contact_reason: "beavers",
+        contact_reason: "scouts",
         contact_message: "",
         contact_phone: "",
         contact_email: "",
@@ -79,7 +79,6 @@ const ContactForm = ({ slice }: ContactFormProps) => {
             <Script src="https://www.google.com/recaptcha/api.js?render=6LcclWkiAAAAAD0Nag4yvmFRyK98whwSwpNZsvph" />
             <div className="container">
                 <form id="contact" action="" onSubmit={handleSubmit} method="post">
-                    <h3>Contact us</h3>
                     <fieldset>
                         <label htmlFor="contact_reason">Which section do you wish to contact?<span
                             className="required">*</span></label>
@@ -105,7 +104,7 @@ const ContactForm = ({ slice }: ContactFormProps) => {
                     </fieldset>
                     <fieldset>
                         <label htmlFor="contact_message">Your message<span className="required">*</span></label>
-                        <textarea id="contact_message" placeholder="Type your Message Here...." value={inputs.contact_message} onChange={handleMessageChange} tabIndex={5} required/>
+                        <textarea id="contact_message" placeholder="Type your message here...." value={inputs.contact_message} onChange={handleMessageChange} tabIndex={5} required/>
                     </fieldset>
                     <fieldset>
                         <button name="submit" type="submit" id="contact_submit" tabIndex={6}
@@ -184,6 +183,16 @@ const ContactForm = ({ slice }: ContactFormProps) => {
             color: rgb(208, 1, 27);
             margin-left: 4px;
         }
+        
+        button {
+            width: 100%;
+            height: 100px;
+            height: 50px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #00A794;
+        }
+        
     `}</style>
         </section>
     )

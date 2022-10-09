@@ -21,6 +21,7 @@ import Custom404 from './404'
 import {ParsedUrlQuery} from "querystring";
 import useUpdatePreviewRef from "../utils/useUpdatePreviewRef";
 import {PageDocument, SiteConfigurationDocument} from "../types.generated";
+import Link from "next/link";
 
 type PageData = {
     page: PageDocument;
@@ -104,6 +105,10 @@ const Page = ({ page, config, previewRef }: PageData) => {
 
       <main className={styles.main}>
               <div className="title">
+                  <ul>
+                      <li><Link href="/">Home</Link></li>
+                      <li><Link href="/contact">Contact us</Link></li>
+                  </ul>
                   <h1>{page.data.title}</h1>
               </div>
 
@@ -182,6 +187,17 @@ const Page = ({ page, config, previewRef }: PageData) => {
                 margin-right: 1rem;
                 margin-bottom: 1rem;
                 margin-top: 0;
+            }
+            
+            .title ul {
+                display: inline;
+                float: right;
+                list-style-type: none;
+            }
+            
+            .title li {
+                display: inline;
+                padding-right: 20px;
             }
     `}</style>
 

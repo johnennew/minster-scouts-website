@@ -160,8 +160,7 @@ const validateCaptcha = async (token: string) => {
   let recaptchaAnalysis = await response.json();
 
   if (!recaptchaAnalysis.success) {
-    console.log(JSON.stringify(recaptchaAnalysis));
-    throw "Invalid recaptcha token: " + JSON.stringify(recaptchaAnalysis) + ' ' + recaptchaString;
+    throw "Invalid recaptcha token";
   }
 
   if (recaptchaAnalysis.action !== 'submit') {
