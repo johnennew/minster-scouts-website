@@ -63,4 +63,3 @@ npx prismic-ts-codegen
 ```
 5. Add the slice to the page rendering file at `pages/[[...slug]].tsx`
 
-small change
