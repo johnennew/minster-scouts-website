@@ -142,9 +142,11 @@ const validateCaptcha = async (token: string) => {
     return true;
   }
 
+  const recaptchaString = `secret=${getStringProcessVariable("GOOGLE_CAPTCHA_SECRET")}&response=${token}`;
+
   let response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
     method: "POST",
-    body: `secret=${getStringProcessVariable("GOOGLE_CAPTCHA_SECRET")}&response=${token}`,
+    body: recaptchaString,
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
