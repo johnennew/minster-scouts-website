@@ -143,6 +143,7 @@ const validateCaptcha = async (token: string) => {
   }
 
   const recaptchaString = `secret=${getStringProcessVariable("GOOGLE_CAPTCHA_SECRET")}&response=${token}`;
+  console.warn(recaptchaString);
 
   let response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
     method: "POST",
@@ -161,7 +162,7 @@ const validateCaptcha = async (token: string) => {
 
   if (!recaptchaAnalysis.success) {
     console.log(JSON.stringify(recaptchaAnalysis));
-    throw "Invalid recaptcha token: " + JSON.stringify(recaptchaAnalysis);
+    throw "Invalid recaptcha token: " + JSON.stringify(recaptchaAnalysis) + ' ' + recaptchaString;
   }
 
   if (recaptchaAnalysis.action !== 'submit') {
