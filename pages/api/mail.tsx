@@ -158,7 +158,8 @@ const validateCaptcha = async (token: string) => {
   let recaptchaAnalysis = await response.json();
 
   if (!recaptchaAnalysis.success) {
-    throw "Invalid recaptcha token: " + token + ' : ' + getStringProcessVariable("GOOGLE_CAPTCHA_SECRET");
+    console.log(JSON.stringify(recaptchaAnalysis));
+    throw "Invalid recaptcha token: " + JSON.stringify(recaptchaAnalysis);
   }
 
   if (recaptchaAnalysis.action !== 'submit') {
