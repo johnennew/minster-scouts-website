@@ -149,8 +149,7 @@ const validateCaptcha = async (token: string) => {
     method: "POST",
     body: recaptchaString,
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
   });
 
@@ -204,16 +203,18 @@ const mail = (req: ExtendedNextApiRequest, res: NextApiResponse<ResponseData>) =
               res.status(200).json({ message: "Message sent"});
             } catch (error:any) {
               if (error.response) {
+                console.error('Error from SendGrid: ' + error.response)
                 res.status(400).json({ message: "There was a problem communicating with SendGrid. " + error.response});
               }
               else {
+                console.error('Error from SendGrid')
                 res.status(400).json({ message: "There was a problem communicating with SendGrid. "});
               }
             }
           })();
         })
         .catch(error => {
-          console.log(error);
+          console.error(error);
           res.status(400).json({ message: "There was a problem validating your message request. " + error});
         });
 }
