@@ -38,6 +38,9 @@
             },
             "video": {
               "type": "SharedSlice"
+            },
+            "contact_form": {
+              "type": "SharedSlice"
             }
           }
         }

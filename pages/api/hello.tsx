@@ -7,6 +7,7 @@ type Data = {
 }
 
 const example = (req: NextApiRequest, res: NextApiResponse<Data>) => {
+  console.log(process.env.NODE_ENV);
   res.status(200).json({ name: 'John Doe' })
 }
 

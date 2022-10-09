@@ -1,9 +1,18 @@
 {
-  "id": "e69d8b40-e8fd-4163-bdd8-cb7d29e0a76d",
-  "uid": "laudantium-atque-illum",
+  "id": "mock-doc-id",
+  "url": null,
   "type": "page",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
   "data": {
-    "title": "aggregate bleeding-edge networks",
-    "slug": "/about"
+    "title": "nearest",
+    "slug": "/about",
+    "slices": []
   }
 }

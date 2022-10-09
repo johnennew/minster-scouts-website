@@ -5,7 +5,6 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Client } from '../utils/prismicHelpers'
 import {SliceZone} from "@prismicio/react"
-import {Page, SiteConfiguration} from "../utils/types"
 import * as prismic from "@prismicio/client";
 
 // Slices
@@ -14,16 +13,18 @@ import Meetings from "../slices/Meetings";
 import Text from "../slices/Text";
 import Image from "../slices/Image";
 import Video from "../slices/Video";
+import ContactForm from "../slices/ContactForm";
 
 // Custom components
 import Loader from '../components/Loader'
 import Custom404 from './404'
 import {ParsedUrlQuery} from "querystring";
 import useUpdatePreviewRef from "../utils/useUpdatePreviewRef";
+import {PageDocument, SiteConfigurationDocument} from "../types.generated";
 
 type PageData = {
-    page: Page;
-    config: SiteConfiguration;
+    page: PageDocument;
+    config: SiteConfigurationDocument;
     previewRef: string | null;
     statusCode: 200;
 }
@@ -56,8 +57,8 @@ export const getServerSideProps: GetServerSideProps<PageData | PageNotFound, Par
     }
 
     try {
-        const page = await Client().getFirst<Page>(query);
-        const siteConfig = await Client().getSingle<SiteConfiguration>('site-configuration');
+        const page = await Client().getFirst<PageDocument>(query);
+        const siteConfig = await Client().getSingle<SiteConfigurationDocument>('site-configuration');
 
         return {
             props: {
@@ -110,15 +111,11 @@ const Page = ({ page, config, previewRef }: PageData) => {
                   <SliceZone
                       slices={page.data.slices}
                       components={{
-                          // @ts-ignore
+                          contact_form: ContactForm,
                           text_and_image: TextAndImage,
-                          // @ts-ignore
                           meetings: Meetings,
-                          // @ts-ignore
                           text: Text,
-                          // @ts-ignore
                           image: Image,
-                          // @ts-ignore
                           video: Video,
                       }}
                       context={config}

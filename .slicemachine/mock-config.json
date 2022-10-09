@@ -95,7 +95,12 @@
           }
         }
       }
-    ]
+    ],
+    "ContactForm": {
+      "default": {
+        "primary": {}
+      }
+    }
   },
   "_cts": {
     "homepage": {},
