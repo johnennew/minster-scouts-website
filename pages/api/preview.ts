@@ -6,7 +6,7 @@ type Data = {
     message: string
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
+const preview = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     const { token: ref } = req.query;
 
     const redirectUrl = await Client(req)
@@ -28,3 +28,5 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     );
     res.end();
 };
+
+export default preview;

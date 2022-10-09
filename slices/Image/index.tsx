@@ -1,12 +1,8 @@
 import React from 'react'
-import * as prismicT from "@prismicio/types";
-
-type ImageType = prismicT.Slice<"image", {
-    image: prismicT.ImageField;
-}>
+import {ImageSlice} from "../../types.generated";
 
 type ImageProps = {
-    slice: ImageType;
+    slice: ImageSlice;
 }
 
 const Image = ({ slice }: ImageProps) => (

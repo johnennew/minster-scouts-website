@@ -1,14 +1,9 @@
 import React from 'react'
 import {PrismicRichText} from "@prismicio/react";
-import * as prismicT from "@prismicio/types";
-
-type TextAndImageType = prismicT.Slice<"text_and_image", {
-    image: prismicT.ImageField;
-    text: prismicT.RichTextField;
-}>
+import {TextAndImageSlice} from "../../types.generated";
 
 type TextAndImageProps = {
-    slice: TextAndImageType;
+    slice: TextAndImageSlice;
 }
 
 const TextAndImage = ({ slice }: TextAndImageProps) => (

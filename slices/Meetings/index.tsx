@@ -1,15 +1,10 @@
 import React from 'react'
-import {SiteConfiguration} from "../../utils/types";
 import {PrismicRichText} from "@prismicio/react";
-import * as prismicT from "@prismicio/types";
-
-type MeetingsType = prismicT.Slice<"meetings", {
-    title: prismicT.TitleField;
-}>
+import {MeetingsSlice, SiteConfigurationDocument} from "../../types.generated";
 
 type MeetingsProps = {
-    slice: MeetingsType;
-    context: SiteConfiguration;
+    slice: MeetingsSlice;
+    context: SiteConfigurationDocument;
 }
 
 const Meetings = ({ slice, context }: MeetingsProps) => (

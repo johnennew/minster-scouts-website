@@ -1,13 +1,8 @@
 import React from 'react'
-import * as prismicT from "@prismicio/types";
-import {PrismicRichText} from "@prismicio/react";
-
-type VideoType = prismicT.Slice<"video", {
-    video: prismicT.EmbedField;
-}>
+import {VideoSlice} from "../../types.generated";
 
 type VideoProps = {
-    slice: VideoType;
+    slice: VideoSlice;
 }
 
 const createVideoMarkup = (html: string) => {

@@ -11,7 +11,6 @@ const nextConfig = {
     loader: 'imgix',
     path: '/',
   },
-  tsBuildInfoFile: '.tsbuildinfo',
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
