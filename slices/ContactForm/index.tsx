@@ -18,6 +18,17 @@ const ContactForm = ({ slice }: ContactFormProps) => {
 
     const [inputs, setInputs] = useState<ContactFormInputs>(contactFormInitialState);
 
+    const [sendingClassname, setSendingClassname] = useState('');
+
+    function toggleSendingState(sending: boolean) {
+        if (sending) {
+            setSendingClassname('sending');
+        }
+        else {
+            setSendingClassname('');
+        }
+    }
+
     const handleReasonChange = (event: ChangeEvent<HTMLSelectElement>) => {
         const value = event.target.value;
         setInputs(values => ({...values, contact_reason: (value as ContactReason)}));
@@ -40,6 +51,8 @@ const ContactForm = ({ slice }: ContactFormProps) => {
     )
 
     const sendEmailRequest = (token: string) => {
+        toggleSendingState(true);
+        
         fetch('/api/mail', {
             method: "POST",
             body: JSON.stringify({...inputs, token}),
@@ -47,7 +60,8 @@ const ContactForm = ({ slice }: ContactFormProps) => {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-        }).then(
+        })
+        .then(
             (response) => {
                 if (response.ok) {
                     alert("Message Sent.");
@@ -58,10 +72,16 @@ const ContactForm = ({ slice }: ContactFormProps) => {
                 }
             }
         )
+        .finally(() => toggleSendingState(false))
     }
 
     const handleSubmit = (event: SyntheticEvent) => {
         event.preventDefault();
+
+        if (inputs.contact_message.length < 10) {
+            alert("Your message is too short.");
+            return;
+        }
 
         if (!isProduction()) {
             return sendEmailRequest('');
@@ -106,9 +126,9 @@ const ContactForm = ({ slice }: ContactFormProps) => {
                         <label htmlFor="contact_message">Your message<span className="required">*</span></label>
                         <textarea id="contact_message" placeholder="Type your message here...." value={inputs.contact_message} onChange={handleMessageChange} tabIndex={5} required/>
                     </fieldset>
-                    <fieldset>
+                    <fieldset className={sendingClassname}>
                         <button name="submit" type="submit" id="contact_submit" tabIndex={6}
-                                data-submit="...Sending">Send
+                                data-submit="...Sending" className={sendingClassname}>Send
                         </button>
                     </fieldset>
                 </form>
@@ -192,6 +212,42 @@ const ContactForm = ({ slice }: ContactFormProps) => {
             color: #fff;
             background-color: #00A794;
         }
+        
+        button.sending {
+            display: none;
+        }
+        
+        fieldset.sending {
+          width: 40px;
+          height: 40px;
+          --c: linear-gradient(currentColor 0 0);
+          --r1: radial-gradient(farthest-side at bottom,currentColor 93%,#0000);
+          --r2: radial-gradient(farthest-side at top   ,currentColor 93%,#0000);
+          background: 
+            var(--c) ,
+            var(--r1),
+            var(--r2),
+            var(--c) ,  
+            var(--r1),
+            var(--r2),
+            var(--c) ,
+            var(--r1),
+            var(--r2);
+          background-repeat: no-repeat;
+          animation: db1 1s infinite  alternate;
+        }
+        
+        @keyframes db1 {
+          0%,10% {
+            background-size: 8px 0,8px 4px,8px 4px;
+            background-position: 0 50%,0 calc(50% - 2px),0 calc(50% + 2px),50% 50%,50% calc(50% - 2px),50% calc(50% + 2px),100% 50%,100% calc(50% - 2px),100% calc(50% + 2px);
+         }
+         90%,100% {
+            background-size: 8px 100%,8px 4px, 8px 4px;
+            background-position: 0 50%,0 -2px,0 calc(100% + 2px),50% 50%,50% -2px,50% calc(100% + 2px),100% 50%,100% -2px,100% calc(100% + 2px);
+         }
+        }
+
         
     `}</style>
         </section>
