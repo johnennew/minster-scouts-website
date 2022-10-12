@@ -52,7 +52,7 @@ const ContactForm = ({ slice }: ContactFormProps) => {
 
     const sendEmailRequest = (token: string) => {
         toggleSendingState(true);
-        
+
         fetch('/api/mail', {
             method: "POST",
             body: JSON.stringify({...inputs, token}),
@@ -77,11 +77,6 @@ const ContactForm = ({ slice }: ContactFormProps) => {
 
     const handleSubmit = (event: SyntheticEvent) => {
         event.preventDefault();
-
-        if (inputs.contact_message.length < 10) {
-            alert("Your message is too short.");
-            return;
-        }
 
         if (!isProduction()) {
             return sendEmailRequest('');
@@ -124,7 +119,7 @@ const ContactForm = ({ slice }: ContactFormProps) => {
                     </fieldset>
                     <fieldset>
                         <label htmlFor="contact_message">Your message<span className="required">*</span></label>
-                        <textarea id="contact_message" placeholder="Type your message here...." value={inputs.contact_message} onChange={handleMessageChange} tabIndex={5} required/>
+                        <textarea minLength={10} id="contact_message" placeholder="Type your message here...." value={inputs.contact_message} onChange={handleMessageChange} tabIndex={5} required/>
                     </fieldset>
                     <fieldset className={sendingClassname}>
                         <button name="submit" type="submit" id="contact_submit" tabIndex={6}
