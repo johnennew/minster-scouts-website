@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 import '../styles/globals.css'
 
 // import App from "next/app";

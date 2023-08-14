@@ -1,4 +1,4 @@
-// pages/404.js
+export const runtime = 'edge'
 import Link from 'next/link'
 import Head from "next/head"
 
