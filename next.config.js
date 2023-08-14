@@ -15,6 +15,9 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  experimental: {
+    runtime: 'experimental-edge',
+  },
 }
 
 module.exports = nextConfig
