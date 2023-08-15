@@ -1,4 +1,4 @@
-export const config = { runtime: 'edge' };
+export const config = { runtime: 'experimental-edge' };
 import { GetServerSideProps } from 'next'
 import React from "react"
 import { useRouter } from 'next/router'
