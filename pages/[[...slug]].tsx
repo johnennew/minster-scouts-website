@@ -1,4 +1,4 @@
-export const config = { runtime: 'edge' };
+export const runtime = 'edge'
 
 import { GetServerSideProps } from 'next'
 import React from "react"
