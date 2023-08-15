@@ -1,3 +1,4 @@
+export const config = { runtime: 'edge' };
 import { linkResolver } from '../../prismicConfiguration' // import from wherever this is set
 import { Client } from '../../utils/prismicHelpers'
 import {NextApiRequest, NextApiResponse} from "next";  // import from wherever this is set

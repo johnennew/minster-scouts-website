@@ -1,5 +1,5 @@
 // Send an email using SendGrid
-
+export const config = { runtime: 'edge' };
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {ContactFormInputs, ContactReason} from "../../types.global";
 import sanitizeHtml from 'sanitize-html';

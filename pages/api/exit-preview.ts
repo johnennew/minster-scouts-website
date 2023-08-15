@@ -1,3 +1,4 @@
+export const config = { runtime: 'edge' };
 import {NextApiRequest, NextApiResponse} from "next";
 
 const url = require('url')
